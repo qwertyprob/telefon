@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: production
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE:-changeme_generate_with_rake_secret}
+    volumes:
+      - db_data:/app/db
+    command: >
+      sh -c "bundle exec rake db:migrate &&
+             bundle exec rails server -b 0.0.0.0 -e production"
+
+volumes:
+  db_data:

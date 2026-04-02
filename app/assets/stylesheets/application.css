@@ -16,7 +16,9 @@
 /*= require jquery.dataTables*/
 /*= require jquery.dataTables_themeroller */
 /*= require foundation */
-background: linear-gradient(to top, #fefcea, #ADADAD);
+body {
+  background: linear-gradient(to top, #fefcea, #ADADAD);
+}
 
 #calendar table {
   border-collapse: collapse;
